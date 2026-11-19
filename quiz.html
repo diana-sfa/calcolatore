@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quanto è davvero sano il tuo salone? | Salon Financial Academy</title>
+<meta name="description" content="Quiz gratuito per titolari di salone: 9 domande per capire se il salone ti fa guadagnare o ti fa solo lavorare.">
+<style>
+  :root{
+    --bg:#fbf7f2; --card:#ffffff; --ink:#2a2024; --muted:#6f6468; --line:#e9e1d9;
+    --accent:#8c2f4b; --accent-dark:#6e2239; --soft:#f5ebe6;
+    --red:#c0392b; --amber:#c98a12; --green:#2e7d4f; --wa:#25d366;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:17px}
+  .wrap{max-width:560px;margin:0 auto;padding:28px 18px 40px}
+  .tag{display:inline-block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--soft);padding:5px 10px;border-radius:999px;font-weight:600}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:32px;line-height:1.15;margin:14px 0 10px;font-weight:700}
+  h1 em{color:var(--accent);font-style:italic}
+  h2{font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.2;margin:0 0 14px}
+  .sub{color:var(--muted);margin:0 0 22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .points{list-style:none;padding:0;margin:0 0 20px}
+  .points li{padding:6px 0 6px 28px;position:relative}
+  .points li:before{content:"✓";position:absolute;left:4px;color:var(--accent);font-weight:700}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;padding:15px 16px;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none}
+  .btn-main{background:var(--accent);color:#fff}
+  .btn-main:disabled{opacity:.5;cursor:default}
+  .btn-wa{background:var(--wa);color:#073b1c}
+  .progress{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:14px;color:var(--muted)}
+  .progress .bar{flex:1;height:8px;background:var(--soft);border-radius:999px;overflow:hidden}
+  .progress .bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .3s ease}
+  .opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:14px 16px;font-size:16px;margin-bottom:10px;cursor:pointer;color:var(--ink);line-height:1.35}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{border-color:var(--accent);background:var(--soft);font-weight:600}
+  .back{background:none;border:0;color:var(--muted);font-size:15px;padding:6px 0;cursor:pointer;margin-top:4px}
+  label.f{display:block;font-weight:650;margin:14px 0 6px}
+  input.t{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font-size:18px;outline:0;color:var(--ink);background:#fff}
+  input.t:focus{border-color:var(--accent)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin:16px 0 18px}
+  .consent input{width:20px;height:20px;margin-top:1px;flex-shrink:0;accent-color:var(--accent)}
+  .consent a{color:var(--accent)}
+  .err{color:var(--red);font-size:14px;margin:8px 0 0;min-height:1em}
+  .badge{display:inline-block;color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:10px}
+  .res-text p{margin:0 0 14px}
+  .res-text strong{color:var(--accent-dark)}
+  .safe{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
+  footer{text-align:center;font-size:13px;color:var(--muted);margin-top:26px}
+  footer a{color:var(--muted)}
+  .hidden{display:none !important}
+  #cookie{position:fixed;left:12px;right:12px;bottom:12px;max-width:540px;margin:0 auto;background:var(--ink);color:#fff;border-radius:14px;padding:14px 16px;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);z-index:10}
+  #cookie p{margin:0 0 10px}
+  #cookie a{color:#fff}
+  #cookie .row{display:flex;gap:8px}
+  #cookie button{flex:1;border-radius:10px;padding:10px;font-size:15px;font-weight:600;cursor:pointer;border:1.5px solid #fff}
+  #cookie .yes{background:#fff;color:var(--ink)}
+  #cookie .no{background:transparent;color:#fff}
+  #info{font-size:14px;color:var(--muted)}
+  #info h3{color:var(--ink);font-size:16px;margin:0 0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- COPERTINA -->
+  <section id="s-cover">
+    <span class="tag">Quiz gratuito · Salon Financial Academy</span>
+    <h1>Quanto è <em>davvero</em> sano il tuo salone?</h1>
+    <p class="sub">9 domande, ci metti 2 minuti. Alla fine scopri se il salone ti fa guadagnare o ti fa solo lavorare e da dove partirei io per sistemare i conti.</p>
+    <div class="card">
+      <ul class="points">
+        <li>Domande semplici su prezzi, spese e personale</li>
+        <li>Un risultato su misura con una cosa da fare subito</li>
+        <li>Gratis, senza impegno</li>
+      </ul>
+      <button class="btn btn-main" id="start" type="button">Inizia il quiz</button>
+    </div>
+  </section>
+
+  <!-- DOMANDE -->
+  <section id="s-quiz" class="hidden">
+    <div class="progress"><span id="pg-label"></span><span class="bar"><i id="pg-bar"></i></span></div>
+    <div class="card">
+      <h2 id="q-title"></h2>
+      <div id="q-opts"></div>
+      <button class="back" id="back" type="button">← Indietro</button>
+    </div>
+  </section>
+
+  <!-- MODULO -->
+  <section id="s-form" class="hidden">
+    <div class="card">
+      <h2>Ci sei quasi. Il tuo risultato è pronto!</h2>
+      <p style="margin:0;color:var(--muted)">Lasciami il tuo nome e il numero WhatsApp: il risultato lo vedi subito qui sotto. Con il numero posso scriverti per aiutarti a leggerlo, se ti va.</p>
+      <label class="f" for="nome">Nome</label>
+      <input class="t" id="nome" type="text" autocomplete="given-name" placeholder="Il tuo nome">
+      <label class="f" for="tel">Numero WhatsApp</label>
+      <input class="t" id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="es. 333 123 4567">
+      <label class="consent"><input type="checkbox" id="ok"><span>Ho letto l'<a href="https://drive.google.com/file/d/1sqhJB7sIg7YbwC-4VqJmtaNjC2dtPTuU/view?usp=sharing" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattata da Salon Financial Academy.</span></label>
+      <button class="btn btn-main" id="send" type="button">Vedi il mio risultato</button>
+      <p class="err" id="err"></p>
+    </div>
+  </section>
+
+  <!-- RISULTATO -->
+  <section id="s-result" class="hidden">
+    <div class="card">
+      <span class="badge" id="r-badge"></span>
+      <h2 id="r-title"></h2>
+      <div class="res-text" id="r-text"></div>
+      <a class="btn btn-wa" id="wa" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+        <span id="wa-label"></span>
+      </a>
+      <p class="safe">Si apre WhatsApp con il messaggio già scritto: devi solo premere invia.</p>
+    </div>
+  </section>
+
+  <div class="card hidden" id="info">
+    <h3>Privacy e cookie</h3>
+    <p>Nome e numero che inserisci servono solo a Salon Financial Academy per ricontattarti sul risultato del quiz, come spiegato nell'<a href="https://drive.google.com/file/d/1sqhJB7sIg7YbwC-4VqJmtaNjC2dtPTuU/view?usp=sharing" target="_blank" rel="noopener">informativa privacy</a>. Se accetti i cookie, usiamo il pixel di Meta per sapere se le nostre pubblicità portano persone fin qui. Se rifiuti, la pagina funziona lo stesso.</p>
+    <p><a href="#" id="reset-consent">Cambia la tua scelta sui cookie</a></p>
+  </div>
+
+  <footer>Salon Financial Academy · Diana Frascarelli<br><a href="#" id="open-info">Privacy e cookie</a></footer>
+</div>
+
+<div id="cookie" class="hidden" role="dialog" aria-label="Cookie">
+  <p>Usiamo un cookie di Meta solo per capire se le nostre pubblicità funzionano. <a href="#" id="cookie-more">Più info</a></p>
+  <div class="row"><button class="no" id="c-no" type="button">Rifiuto</button><button class="yes" id="c-yes" type="button">Va bene</button></div>
+</div>
+
+<script>
+(function(){
+  // ====== IMPOSTAZIONI (modificare qui) ======
+  var PIXEL_ID = "";                 // ID del pixel Meta di SFA: se vuoto, niente pixel e niente banner
+  var WA_NUMBER = "393939271788";     // WhatsApp di Diana con prefisso 39
+  var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSebyA79XMsugUMF_qnpqNzjJFVzHOv6OHtlcLK9_cSnhe4Ngg/formResponse";
+  var F = {nome:"entry.2033897735", tel:"entry.1726021247", ris:"entry.1523693497", det:"entry.136374629", rif:"entry.433048403"};
+  // ===========================================
+
+  var QUESTIONS = [
+    {t:"Chi sei in salone?", k:"chi", o:[["Titolare e in salone ci sono solo io",0],["Titolare con 1-3 collaboratrici",0],["Titolare con 4 o più collaboratrici",0],["Lavoro in un salone, ma non sono titolare",0]]},
+    {t:"Cosa ti pesa di più in questo periodo?", k:"pesa", o:[["I prezzi: non so se sono quelli giusti",0],["Le spese: escono più soldi di quelli che vedo entrare",0],["Il personale: costa tanto e non so se rende",0],["Il tempo: senza di me il salone si ferma",0]]},
+    {t:"Il prezzo del colore come l'hai deciso?", k:"colore", o:[["Ho fatto il conto di quanto mi costa farlo",10],["Ho guardato i saloni vicini e l'ho sistemato su quelli",5],["L'ho messo anni fa e da allora l'ho toccato poco",0]]},
+    {t:"Fai una piega da 25 €. Quanti di quei soldi restano davvero a te?", k:"piega", o:[["Te lo dico al centesimo",15],["Più o meno lo so",5],["Sinceramente non ne ho idea",0]]},
+    {t:"Se un mese non entrasse nessuna cliente, sai quanto ti costerebbe comunque tenere aperto il salone?", k:"fisse", o:[["Sì, so la cifra",10],["A grandi linee",5],["No",0]]},
+    {t:"Quando arrivano affitto, bollette e stipendi, i soldi sono già lì?", k:"cassa", o:[["Sì, li metto da parte prima",10],["A volte devo aspettare gli incassi di quei giorni",5],["Spesso faccio i salti mortali",0]]},
+    {t:"Sai quanto incassa ogni collaboratrice rispetto a quanto ti costa?", k:"staff", o:[["Sì, lo controllo ogni mese",10],["A occhio so chi rende di più",5],["No, non l'ho mai calcolato",0],["In salone ci sono solo io",5]]},
+    {t:"Ti paghi uno stipendio fisso ogni mese?", k:"stipendio", o:[["Sì, sempre la stessa cifra",15],["Prendo quello che avanza",5],["Spesso salto: prima vengono le spese",0]]},
+    {t:"Ti è mai capitato di chiudere un mese pieno di lavoro e trovare in conto meno di quello che pensavi?", k:"conto", o:[["Mai",10],["Qualche volta",5],["Spesso",0]]}
+  ];
+  var MAX = 80;
+
+  var RESULTS = [
+    {min:0, max:30, key:"ALLARME ROSSO", color:"var(--red)",
+     title:"Le responsabilità sono da titolare, ma i margini sono da lavoro dipendente",
+     html:"<p><strong>Cosa vedo dalle tue risposte:</strong> il salone lavora, ma su tanti servizi ti resta pochissimo e su qualcuno forse ci rimetti. Non è colpa della crisi o delle clienti che mancano: il punto sono i prezzi, messi senza sapere quanto ti costa davvero fare quel servizio. Finché è così, più lavori più ti stanchi, ma in tasca non cambia molto.</p><p><strong>Una cosa che puoi fare stasera:</strong> prendi il servizio che fai di più e scrivi su un foglio quanto ti costa in prodotti. Poi aggiungi un pezzetto di affitto e bollette per il tempo che ci metti. Se il totale si avvicina al prezzo di listino, hai trovato da dove partire.</p><p><strong>Il prossimo passo:</strong> scrivimi su WhatsApp. Scegliamo insieme quel servizio e lo calcoliamo al centesimo: ti dico se ci stai perdendo e che prezzo mettere. È gratis.</p>",
+     btn:"Controlliamo il mio prezzo",
+     msg:"Ciao Diana, ho fatto il quiz e mi è uscito ALLARME ROSSO. Mi aiuti a controllare il prezzo del servizio che faccio di più?"},
+    {min:35, max:70, key:"ZONA GRIGIA", color:"var(--amber)",
+     title:"Il salone lavora, ma tanti soldi rimangono sul tavolo",
+     html:"<p><strong>Cosa vedo dalle tue risposte:</strong> il salone va e le spese le paghi, ma tante decisioni le prendi a occhio. Guardi soprattutto l'incasso della sera, che però non è quello che ti resta. Così qualche prezzo è sbagliato di poco, qualche spesa pesa più del dovuto e a fine mese ti ritrovi meno di quello che meriti per la fatica che fai.</p><p><strong>Una cosa che puoi fare stasera:</strong> prendi l'incasso del mese scorso e dividilo per il numero di clienti: è il tuo scontrino medio. Poi guarda l'affitto e chiediti quante clienti ti servono solo per pagarlo. Questi due numeri ti dicono già tanto.</p><p><strong>Il prossimo passo:</strong> scrivimi su WhatsApp con questi due numeri. Ti faccio vedere dove ti scappano i soldi e quanto dovrebbe spendere in media ogni cliente perché ti resti un guadagno vero. È gratis.</p>",
+     btn:"Guardiamo i miei numeri",
+     msg:"Ciao Diana, ho fatto il quiz e mi è uscita ZONA GRIGIA. Mi aiuti a capire dove mi scappano i soldi?"},
+    {min:75, max:80, key:"ECCELLENZA", color:"var(--green)",
+     title:"C'è la stoffa per fare impresa, ora è il momento di liberare il tuo tempo",
+     html:"<p><strong>Cosa vedo dalle tue risposte:</strong> complimenti, sono poche le titolari che arrivano qui. I conti li conosci, i prezzi li hai calcolati e ti paghi uno stipendio. Spesso però a questo punto il salone gira bene solo quando ci sei tu: se ti fermi una settimana, si ferma tutto.</p><p><strong>Una cosa che puoi fare questa settimana:</strong> segna ogni giorno quante ore passi in poltrona e quante a fare tutto il resto. Ti accorgerai che il tuo tempo è la cosa più cara del salone.</p><p><strong>Il prossimo passo:</strong> scrivimi su WhatsApp. Vediamo insieme come far lavorare il team con la tua stessa precisione, senza perdere margine.</p>",
+     btn:"Parliamone su WhatsApp",
+     msg:"Ciao Diana, ho fatto il quiz e mi è uscita ECCELLENZA. Mi piacerebbe capire come liberare un po' del mio tempo."}
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var params = new URLSearchParams(location.search);
+  var code = (params.get("v") || params.get("utm_content") || "ORG").replace(/[^A-Za-z0-9_-]/g,"").slice(0,12) || "ORG";
+  var answers = [], idx = 0, started = false;
+
+  // ---- Pixel e consenso ----
+  function store(k, v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+  function loadPixel(){
+    if(!PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {content_name: 'quiz_salone', content_category: code});
+  }
+  function track(type, name, data){ if(window.fbq){ type==="custom" ? fbq('trackCustom', name, data||{}) : fbq('track', name, data||{}); } }
+  function initConsent(){
+    if(!PIXEL_ID) return;
+    var c = store("sfa_consent");
+    if(c === "yes") loadPixel();
+    else if(c !== "no") $("cookie").classList.remove("hidden");
+  }
+  $("c-yes").onclick = function(){ store("sfa_consent","yes"); $("cookie").classList.add("hidden"); loadPixel(); };
+  $("c-no").onclick = function(){ store("sfa_consent","no"); $("cookie").classList.add("hidden"); };
+  function showInfo(e){ e.preventDefault(); $("info").classList.remove("hidden"); $("info").scrollIntoView({behavior:"smooth"}); }
+  $("open-info").onclick = showInfo; $("cookie-more").onclick = showInfo;
+  $("reset-consent").onclick = function(e){ e.preventDefault(); try{ localStorage.removeItem("sfa_consent"); }catch(x){} if(PIXEL_ID){ $("cookie").classList.remove("hidden"); } };
+
+  // ---- Navigazione ----
+  function show(id){
+    ["s-cover","s-quiz","s-form","s-result"].forEach(function(s){ $(s).classList.toggle("hidden", s !== id); });
+    window.scrollTo(0,0);
+  }
+  function renderQ(){
+    var q = QUESTIONS[idx];
+    $("pg-label").textContent = "Domanda " + (idx+1) + " di " + QUESTIONS.length;
+    $("pg-bar").style.width = ((idx) / QUESTIONS.length * 100) + "%";
+    $("q-title").textContent = q.t;
+    var box = $("q-opts"); box.innerHTML = "";
+    q.o.forEach(function(opt, i){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt" + (answers[idx] === i ? " sel" : ""); b.textContent = opt[0];
+      b.onclick = function(){
+        answers[idx] = i; b.classList.add("sel");
+        if(!started){ started = true; track("custom", "QuizIniziato", {rif: code}); }
+        setTimeout(function(){
+          if(idx < QUESTIONS.length - 1){ idx++; renderQ(); }
+          else { show("s-form"); track("custom", "QuizCompletato", {rif: code}); }
+        }, 220);
+      };
+      box.appendChild(b);
+    });
+    $("back").style.visibility = idx === 0 ? "hidden" : "visible";
+  }
+  $("start").onclick = function(){ idx = 0; show("s-quiz"); renderQ(); };
+  $("back").onclick = function(){ if(idx > 0){ idx--; renderQ(); } };
+
+  function score(){
+    var s = 0;
+    QUESTIONS.forEach(function(q, i){ if(answers[i] !== undefined) s += q.o[answers[i]][1]; });
+    return s;
+  }
+  function resultFor(s){
+    for(var i=0;i<RESULTS.length;i++){ if(s >= RESULTS[i].min && s <= RESULTS[i].max) return RESULTS[i]; }
+    return s < 35 ? RESULTS[0] : (s < 75 ? RESULTS[1] : RESULTS[2]);
+  }
+
+  // ---- Invio ----
+  $("send").onclick = function(){
+    var nome = $("nome").value.trim(), tel = $("tel").value.trim(), digits = tel.replace(/[^0-9]/g,"");
+    if(nome.length < 2){ $("err").textContent = "Scrivi il tuo nome."; return; }
+    if(digits.length < 9 || digits.length > 15){ $("err").textContent = "Controlla il numero WhatsApp."; return; }
+    if(!$("ok").checked){ $("err").textContent = "Per vedere il risultato serve il consenso privacy."; return; }
+    $("err").textContent = ""; $("send").disabled = true; $("send").textContent = "Un attimo…";
+
+    var s = score(), r = resultFor(s);
+    var det = QUESTIONS.map(function(q, i){ return q.k + ": " + (answers[i] !== undefined ? q.o[answers[i]][0] : "-"); }).join(" | ");
+    var body = new URLSearchParams();
+    body.append(F.nome, nome); body.append(F.tel, tel);
+    body.append(F.ris, r.key + " (" + s + "/" + MAX + ")");
+    body.append(F.det, det); body.append(F.rif, code);
+    try{ fetch(FORM_URL, {method:"POST", mode:"no-cors", body: body}); }catch(e){}
+    track("std", "Lead", {content_name: "quiz_salone", content_category: code, value: 0, currency: "EUR"});
+
+    $("r-badge").textContent = r.key; $("r-badge").style.background = r.color;
+    $("r-title").textContent = r.title;
+    $("r-text").innerHTML = r.html;
+    $("wa-label").textContent = r.btn;
+    $("wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(r.msg + " (rif. " + code + ")");
+    setTimeout(function(){ show("s-result"); }, 400);
+  };
+  $("wa").addEventListener("click", function(){ track("std", "Contact", {content_name: "whatsapp_diana_quiz", content_category: code}); });
+
+  initConsent();
+})();
+</script>
+</body>
+</html>
