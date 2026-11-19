@@ -259,7 +259,7 @@
     $("r-title").textContent = r.title;
     $("r-text").innerHTML = r.html;
     $("wa-label").textContent = r.btn;
-    $("wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(r.msg + " (rif. " + code + ")");
+    $("wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(r.msg);
     setTimeout(function(){ show("s-result"); }, 400);
   };
   $("wa").addEventListener("click", function(){ track("std", "Contact", {content_name: "whatsapp_diana_quiz", content_category: code}); });
