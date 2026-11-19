@@ -46,6 +46,8 @@
   .badge{display:inline-block;color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:10px}
   .res-text p{margin:0 0 14px}
   .res-text strong{color:var(--accent-dark)}
+  .pain{background:var(--soft);border-radius:12px;padding:14px;margin:0 0 16px}
+  .pain b{display:block;color:var(--accent-dark);margin-bottom:2px}
   .safe{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
   footer{text-align:center;font-size:13px;color:var(--muted);margin-top:26px}
   footer a{color:var(--muted)}
@@ -92,14 +94,15 @@
   <!-- MODULO -->
   <section id="s-form" class="hidden">
     <div class="card">
-      <h2>Ci sei quasi. Il tuo risultato è pronto!</h2>
-      <p style="margin:0;color:var(--muted)">Lasciami il tuo nome e il numero WhatsApp: il risultato lo vedi subito qui sotto. Con il numero posso scriverti per aiutarti a leggerlo, se ti va.</p>
+      <span class="badge" id="f-badge"></span>
+      <h2 id="f-title">Il tuo risultato è pronto</h2>
+      <p style="margin:0;color:var(--muted)">Lasciami nome e WhatsApp: qui sotto leggi cosa significa e cosa puoi fare da subito. Con il numero posso scriverti per aiutarti a leggerlo, se ti va.</p>
       <label class="f" for="nome">Nome</label>
       <input class="t" id="nome" type="text" autocomplete="given-name" placeholder="Il tuo nome">
       <label class="f" for="tel">Numero WhatsApp</label>
       <input class="t" id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="es. 333 123 4567">
       <label class="consent"><input type="checkbox" id="ok"><span>Ho letto l'<a href="https://drive.google.com/file/d/1sqhJB7sIg7YbwC-4VqJmtaNjC2dtPTuU/view?usp=sharing" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattata da Salon Financial Academy.</span></label>
-      <button class="btn btn-main" id="send" type="button">Vedi il mio risultato</button>
+      <button class="btn btn-main" id="send" type="button">Leggi il mio risultato</button>
       <p class="err" id="err"></p>
     </div>
   </section>
@@ -109,6 +112,7 @@
     <div class="card">
       <span class="badge" id="r-badge"></span>
       <h2 id="r-title"></h2>
+      <div class="pain" id="r-pain"></div>
       <div class="res-text" id="r-text"></div>
       <a class="btn btn-wa" id="wa" href="#" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
@@ -153,6 +157,14 @@
     {t:"Ti è mai capitato di chiudere un mese pieno di lavoro e trovare in conto meno di quello che pensavi?", k:"conto", o:[["Mai",10],["Qualche volta",5],["Spesso",0]]}
   ];
   var MAX = 80;
+
+  var PAINS = [
+    {t:"Mi hai detto che ti pesano soprattutto i prezzi. È il punto giusto da cui partire: un prezzo sbagliato lo paghi su ogni cliente che entra, anche quando l'agenda è piena.", w:"La cosa che mi pesa di più sono i prezzi."},
+    {t:"Mi hai detto che ti pesano soprattutto le spese. Prima di tagliare qualcosa conviene capire quali sono fisse e quanto pesano sull'incasso: spesso il problema non è quanto spendi, ma quanto ti resta su ogni servizio.", w:"La cosa che mi pesa di più sono le spese."},
+    {t:"Mi hai detto che ti pesa soprattutto il personale. Il primo passo è mettere vicino quanto incassa ogni collaboratrice e quanto ti costa davvero: senza questo numero ogni decisione la prendi al buio.", w:"La cosa che mi pesa di più è il personale."},
+    {t:"Mi hai detto che ti pesa soprattutto il tempo, perché senza di te il salone si ferma. Per liberarne un po' servono prima numeri chiari: quando sai cosa rende puoi lasciare il lavoro alle altre senza paura di perderci.", w:"La cosa che mi pesa di più è il tempo: senza di me il salone si ferma."}
+  ];
+  var TEASER = {"ALLARME ROSSO":"Il tuo salone è in allarme rosso", "ZONA GRIGIA":"Il tuo salone è in zona grigia", "ECCELLENZA":"Il tuo salone è un'eccellenza"};
 
   var RESULTS = [
     {min:0, max:30, key:"ALLARME ROSSO", color:"var(--red)",
@@ -218,12 +230,17 @@
         if(!started){ started = true; track("custom", "QuizIniziato", {rif: code}); }
         setTimeout(function(){
           if(idx < QUESTIONS.length - 1){ idx++; renderQ(); }
-          else { show("s-form"); track("custom", "QuizCompletato", {rif: code}); }
+          else { showTeaser(); show("s-form"); track("custom", "QuizCompletato", {rif: code}); }
         }, 220);
       };
       box.appendChild(b);
     });
     $("back").style.visibility = idx === 0 ? "hidden" : "visible";
+  }
+  function showTeaser(){
+    var r = resultFor(score());
+    $("f-badge").textContent = r.key; $("f-badge").style.background = r.color;
+    $("f-title").textContent = TEASER[r.key] || "Il tuo risultato è pronto";
   }
   $("start").onclick = function(){ idx = 0; show("s-quiz"); renderQ(); };
   $("back").onclick = function(){ if(idx > 0){ idx--; renderQ(); } };
@@ -259,7 +276,11 @@
     $("r-title").textContent = r.title;
     $("r-text").innerHTML = r.html;
     $("wa-label").textContent = r.btn;
-    $("wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(r.msg);
+    var p = answers[1] !== undefined ? PAINS[answers[1]] : null;
+    $("r-pain").innerHTML = p ? "<b>Partiamo da quello che ti pesa</b>" + p.t : "";
+    $("r-pain").style.display = p ? "" : "none";
+    var msg = p ? r.msg.replace(". ", ". " + p.w + " ") : r.msg;
+    $("wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
     setTimeout(function(){ show("s-result"); }, 400);
   };
   $("wa").addEventListener("click", function(){ track("std", "Contact", {content_name: "whatsapp_diana_quiz", content_category: code}); });
