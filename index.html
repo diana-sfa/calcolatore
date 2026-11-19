@@ -160,7 +160,7 @@
 <script>
 (function(){
   // ====== IMPOSTAZIONI (modificare qui) ======
-  var PIXEL_ID = "";                 // ID del pixel Meta di SFA: se vuoto, niente pixel e niente banner
+  var PIXEL_ID = "856852597216949";                 // ID del pixel Meta di SFA: se vuoto, niente pixel e niente banner
   var WA_NUMBER = "393939271788";     // WhatsApp di Diana con prefisso 39
   var PAGA_DIPENDENTE = 9;            // paga netta oraria media di una dipendente, in euro
   var OBIETTIVO_TITOLARE = 15;        // soglia "ti paghi da titolare", in euro l'ora
@@ -172,7 +172,7 @@
   var role = "titolare";
   var calcTracked = false, calcTimer = null, lastMsg = "";
 
-  function fmt(n, d){ return n.toLocaleString("it-IT",{minimumFractionDigits:d||0, maximumFractionDigits:d||0}); }
+  function fmt(n, d){ return n.toLocaleString("it-IT",{minimumFractionDigits:d||0, maximumFractionDigits:d||0, useGrouping:"always"}); }
   function val(id){ var v = parseFloat(String($(id).value).replace(",", ".")); return isNaN(v) ? null : v; }
 
   // ---- Pixel e consenso ----
