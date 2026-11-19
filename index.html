@@ -248,7 +248,7 @@
     $("mv").textContent = " " + mv;
 
     var ruolo = {titolare:"titolare", socia:"socia", dipendente:"dipendente", altro:"nel settore"}[role];
-    lastMsg = "Ciao Diana, ho fatto il calcolo della paga oraria: mi pago " + fmt(paga, 2) + " € l'ora e lavoro circa " + fmt(oreAnno) + " ore l'anno. Sono " + ruolo + " di un salone. Quale servizio guarderesti per primo? (rif. " + code + ")";
+    lastMsg = "Ciao Diana, ho fatto il calcolo della paga oraria: mi pago " + fmt(paga, 2) + " € l'ora e lavoro circa " + fmt(oreAnno) + " ore l'anno. Sono " + ruolo + " di un salone. Quale servizio guarderesti per primo?";
     if(role === "altro") lastMsg = lastMsg.replace("Sono nel settore di un salone.", "Lavoro nel settore.");
     setWa(true);
 
